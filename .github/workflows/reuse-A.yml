@@ -1,0 +1,13 @@
+name: "Reuse workflow A"
+on:
+  workflow_call:
+    inputs: {}
+    outputs: {}
+
+jobs:
+  reuse-workflow-job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say something I'm giving up on you...
+        run: |
+          echo "Okay I am saying something inside of reuse workflow A"
