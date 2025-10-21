@@ -11,6 +11,15 @@ jobs:
     steps:
       - name: "Hello World!!!"
         run: |
-          echo "Hello World... :)" 
+          echo "Hello World... :)"
+
   call-reuse-workflow-A:
     uses: ./.github/workflows/reuse-A.yml
+    with:
+      name: Baker Mayfield
+
+
+  call-reuse-workflow-B:
+    uses: ./.github/workflows/reuse-A.yml
+    with:
+      name: Justin Jefferson
