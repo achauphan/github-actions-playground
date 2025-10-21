@@ -1,0 +1,14 @@
+name: main workflow
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Hello World!!!"
+        run: |
+          echo "Hello World... :)" 
