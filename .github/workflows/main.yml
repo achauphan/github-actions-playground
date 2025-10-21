@@ -12,3 +12,6 @@ jobs:
       - name: "Hello World!!!"
         run: |
           echo "Hello World... :)" 
+
+  call-reuse-workflow-A:
+    uses: ./.github/workflow/reuse-A.yml
