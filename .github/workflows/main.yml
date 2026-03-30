@@ -13,8 +13,13 @@ jobs:
         run: |
           echo "Hello World... :)" 
 
-
-  call-reusable:
+  gcc:
     uses: ./.github/workflows/reusable.yml
     with:
       config-path: smiley/face/hehe.yml
+
+  cuda:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      config-path: some/cuda/gpu.yml
+
