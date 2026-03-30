@@ -12,3 +12,9 @@ jobs:
       - name: "Hello World!!!"
         run: |
           echo "Hello World... :)" 
+
+
+  call-reusable:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      config-path: smiley/face/hehe.yml
