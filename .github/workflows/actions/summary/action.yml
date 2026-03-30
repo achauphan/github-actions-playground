@@ -1,0 +1,21 @@
+name: Summary composite action
+
+inputs:
+  config-path:
+    require: true
+    default: 'No config path given'
+
+runs:
+  using: "composite"
+  steps:
+    - name: "Write job summary"
+      shell: bash -e {0}
+      run: |
+        cat <<EOF >> $GITHUB_STEP_SUMMARY
+        ## Config path:
+        \`\`\`
+        ${{ inputs.config-path }}
+        \`\`\`
+        EOF
+    
+  
