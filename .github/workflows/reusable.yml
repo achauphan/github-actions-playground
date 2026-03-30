@@ -11,4 +11,14 @@ jobs:
   gcc:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "${{ inputs.config-path }}"
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          fetch-depth: 0
+      - name: echo given config-path 
+        run: |
+          echo "${{ inputs.config-path }}"
+      - name: Summarize
+        uses: ./.github/workflows/actions/summary
+        with:
+          config-path: ${{ inputs.config-path }}
