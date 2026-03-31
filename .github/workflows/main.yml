@@ -14,11 +14,13 @@ jobs:
           echo "Hello World... :)" 
 
   gcc:
+    runs-on: ubuntu-latest
     uses: ./.github/workflows/reusable.yml
     with:
       config-path: smiley/face/hehe.yml
 
   cuda:
+    runs-on: ubuntu-latest
     uses: ./.github/workflows/reusable.yml
     with:
       config-path: some/cuda/gpu.yml
