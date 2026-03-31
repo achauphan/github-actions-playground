@@ -3,12 +3,16 @@ name: Reusable workflow example
 on:
   workflow_call:
     inputs:
+      target-runner-labels:
+        required: true
+        type: string
       config-path:
         required: true
         type: string
 
 jobs:
   pipeline:
+    runs-on: ${{ fromJson(inputs.target-runner-labels) }}
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
@@ -17,6 +21,7 @@ jobs:
       - name: echo given config-path 
         run: |
           echo "${{ inputs.config-path }}"
+          echo "${{ inputs.target-runner-labels }}"
       - name: Summarize
         uses: ./.github/workflows/actions/summary
         with:
