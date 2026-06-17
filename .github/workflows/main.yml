@@ -13,6 +13,7 @@ jobs:
         run: |
           echo "temporary job with name change"
   hello:
+    name: "hello / pipeline"
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World!!!"
