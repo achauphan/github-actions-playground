@@ -12,6 +12,7 @@ on:
 
 jobs:
   pipeline:
+    name: ""
     runs-on: ${{ fromJson(inputs.target-runner-labels) }}
     steps:
       - name: Checkout
