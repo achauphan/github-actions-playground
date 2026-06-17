@@ -20,6 +20,7 @@ jobs:
       config-path: smiley/face/hehe.yml
 
   cuda:
+    name: cuda-uvm
     uses: ./.github/workflows/reusable.yml
     with:
       target-runner-labels: "['ubuntu-latest']"
