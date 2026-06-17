@@ -7,12 +7,16 @@ on:
 
 jobs:
   hello:
-    name: "hello / pipeline"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Hello World!!!"
-        run: |
-          echo "Hello World... :)" 
+    uses: ./.github/workflows/reusable.yml
+    with:
+      target-runner-labels: "['ubuntu-latest']"
+      config-path: main/thing/blah.yml
+#    name: "hello / pipeline"
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: "Hello World!!!"
+#        run: |
+#          echo "Hello World... :)" 
 
   gcc:
     uses: ./.github/workflows/reusable.yml
