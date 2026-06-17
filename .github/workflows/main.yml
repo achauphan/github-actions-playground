@@ -7,6 +7,7 @@ on:
 
 jobs:
   hello:
+    name: "hello / pipeline"
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World!!!"
