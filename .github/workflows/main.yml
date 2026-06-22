@@ -5,6 +5,7 @@ on:
       - opened
       - synchronize
 
+# complete job name should be: "hello / pipeline"
 jobs:
   hello-temp:
     runs-on: ubuntu-latest
@@ -13,12 +14,10 @@ jobs:
         run: |
           echo "temporary job with name change"
   hello:
-    name: "hello / pipeline"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Hello World!!!"
-        run: |
-          echo "Hello World... :)"
+    uses: ./.github/workflows/reusable.yml
+    with:
+      target-runner-labels: "['ubuntu-latest']"
+      config-path: new/hello/pipeline.yml
 
   gcc:
     uses: ./.github/workflows/reusable.yml
