@@ -19,6 +19,13 @@ jobs:
         run: |
           echo "Hello World... :)"
 
+  temp-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Demo source branch changes"
+        run: |
+          echo "Hello World... :)"
+
   gcc:
     uses: ./.github/workflows/reusable.yml
     with:
